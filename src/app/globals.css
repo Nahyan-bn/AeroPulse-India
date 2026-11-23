@@ -1,0 +1,85 @@
+:root {
+  color-scheme: dark;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #07111f;
+  color: #edf5ff;
+  --cyan: #4ee7d2;
+  --blue: #77bdfb;
+  --line: rgba(164, 196, 224, 0.16);
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 78% 25%, rgba(25, 113, 142, 0.13), transparent 27rem),
+    linear-gradient(145deg, #07111f 0%, #091421 100%);
+}
+a { color: var(--blue); text-decoration: none; }
+main { max-width: 1120px; margin: 0 auto; padding: 32px 20px; }
+.home { max-width: 1180px; min-height: 100vh; padding-top: 26px; }
+.nav { height: 52px; display: flex; align-items: center; justify-content: space-between; }
+.brand { display: flex; align-items: center; gap: 11px; color: #f4f8ff; font-size: 17px; letter-spacing: 2.5px; }
+.brand b { color: var(--cyan); }
+.brand-mark { position: relative; width: 30px; height: 30px; display: grid; place-items: center; border: 1px solid rgba(78, 231, 210, 0.65); border-radius: 50%; }
+.brand-mark::before, .brand-mark::after, .brand-mark span { content: ""; position: absolute; height: 1px; width: 18px; background: var(--cyan); transform: rotate(-35deg); }
+.brand-mark::after { transform: rotate(35deg); }
+.brand-mark span { width: 5px; height: 5px; border-radius: 50%; transform: none; box-shadow: 0 0 12px var(--cyan); }
+.nav-links { display: flex; align-items: center; gap: 28px; }
+.nav-links a { color: #a9b8c9; font-size: 13px; font-weight: 700; letter-spacing: 0.5px; }
+.nav-links a:hover { color: var(--cyan); }
+.hero { min-height: 430px; display: flex; flex-direction: column; justify-content: center; padding: 62px 0 38px; }
+.hero-copy { max-width: 760px; }
+.eyebrow { display: flex; align-items: center; gap: 9px; color: var(--cyan); font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 2.2px; }
+.eyebrow i { width: 6px; height: 6px; border-radius: 50%; background: var(--cyan); box-shadow: 0 0 12px var(--cyan); }
+.hero h1 { margin: 18px 0 16px; font-size: clamp(48px, 7vw, 76px); line-height: 0.98; letter-spacing: -4px; }
+.hero h1 em { color: #91a5ba; font-style: normal; }
+.hero-copy > p { max-width: 620px; margin: 0; color: #9dafc2; font-size: 17px; line-height: 1.7; }
+.search-panel { margin-top: 42px; border: 1px solid var(--line); border-radius: 12px; background: rgba(12, 27, 44, 0.92); box-shadow: 0 24px 70px rgba(0, 0, 0, 0.24); }
+.search-heading { display: grid; grid-template-columns: 1fr 44px 1fr 1.25fr 0.9fr 150px; align-items: end; gap: 12px; padding: 12px; }
+.search-heading > div { min-width: 0; }
+.field-label { display: block; margin: 0 0 7px 9px; color: #71849a; font-size: 9px; font-weight: 800; letter-spacing: 1.5px; }
+.airport-input, .date-input, select { width: 100%; height: 48px; border: 0; border-radius: 7px; background: #091725; color: #edf5ff; padding: 0 12px; outline: none; }
+.airport-input { font-size: 21px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; }
+.date-input, select { font-size: 13px; }
+.swap-button { height: 48px; border: 1px solid var(--line); border-radius: 50%; background: #112238; color: #91a9c1; cursor: pointer; }
+.search-button { height: 48px; border: 0; border-radius: 7px; background: var(--cyan); color: #07111f; font-weight: 800; cursor: pointer; }
+.search-button:disabled { opacity: 0.65; cursor: wait; }
+.search-message { margin-top: 10px; border: 1px solid var(--line); border-radius: 8px; background: #0d1a2b; padding: 12px 14px; color: #9dafc2; }
+.error-message { border-color: rgba(255, 130, 130, 0.35); color: #ffaaa5; }
+.offer-list { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-top: 8px; }
+.offer { display: flex; justify-content: space-between; gap: 8px; border-radius: 6px; background: #091525; padding: 10px; color: #b9c7d6; }
+.offer b { color: var(--cyan); }
+.feature-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; padding-bottom: 34px; }
+.feature-card { min-height: 150px; display: grid; grid-template-columns: 48px 1fr 20px; align-items: center; gap: 18px; border: 1px solid var(--line); border-radius: 10px; background: rgba(12, 27, 44, 0.58); padding: 22px; color: #edf5ff; }
+.feature-card:hover { border-color: rgba(78, 231, 210, 0.35); transform: translateY(-2px); transition: 180ms ease; }
+.feature-icon { width: 48px; height: 48px; display: grid; place-items: center; border: 1px solid rgba(78, 231, 210, 0.22); border-radius: 50%; color: var(--cyan); background: rgba(78, 231, 210, 0.05); }
+.feature-card div > span { color: var(--cyan); font-size: 9px; font-weight: 800; letter-spacing: 1.5px; }
+.feature-card h2 { margin: 7px 0 5px; font-size: 19px; }
+.feature-card p { margin: 0; color: #869aae; font-size: 13px; line-height: 1.5; }
+.feature-card > b { color: #71849a; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; }
+.card { border: 1px solid #25364d; background: #0d1a2b; border-radius: 10px; padding: 16px; }
+.badge { display: inline-block; border-radius: 999px; padding: 5px 9px; font-size: 12px; font-weight: bold; }
+.connected { background: #174f37; } .test { background: #6b5317; } .pending { background: #5b4a16; }
+.configured { background: #203c67; } .error { background: #702b2b; }
+button, input, textarea, select { font: inherit; }
+textarea { width: 100%; min-height: 120px; background: #091525; color: white; border: 1px solid #25364d; border-radius: 8px; padding: 10px; }
+
+@media (max-width: 850px) {
+  .nav-links { gap: 16px; }
+  .nav-links a:nth-child(3) { display: none; }
+  .search-heading { grid-template-columns: 1fr 40px 1fr; }
+  .search-heading > div:nth-of-type(3), .search-heading > div:nth-of-type(4) { grid-column: span 1; }
+  .search-button { grid-column: 1 / -1; }
+  .feature-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 560px) {
+  main { padding: 20px 14px; }
+  .nav-links a { display: none; }
+  .hero { min-height: 0; padding-top: 56px; }
+  .hero h1 { letter-spacing: -2px; }
+  .search-heading { grid-template-columns: 1fr 36px 1fr; }
+  .search-heading > div:nth-of-type(3), .search-heading > div:nth-of-type(4) { grid-column: 1 / -1; }
+  .offer-list { grid-template-columns: 1fr; }
+}
